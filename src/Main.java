@@ -14,6 +14,11 @@ public class Main {
         // какую версию приложения (обычную или lite) и для какой ОС
         //(Android или iOS) нужно установить пользователю.
         printVersionOs(2022, 0);
+        System.out.println(" ");
+        System.out.println("Задание 3");
+        // программа должна выводить в консоль количество дней доставки
+        // в зависимости от расстояния до адресата
+        printCalculateTimeDelivery(10);
     }
     public static boolean isLeapYear (int year) {
         return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
@@ -43,5 +48,8 @@ public class Main {
         } else         {
             System.out.println("Установите lite-версию для вашего " + getVersionOs(versionOs) + " по ссылке");
         }
+    }
+    public static void printCalculateTimeDelivery(int distance) {
+        System.out.println("Время доставки банковской карты = "+ ((distance + 19)/40 +1));
     }
 }
