@@ -18,7 +18,7 @@ public class Main {
         System.out.println("Задание 3");
         // программа должна выводить в консоль количество дней доставки
         // в зависимости от расстояния до адресата
-        printCalculateTimeDelivery(10);
+        printCalculateTimeDelivery(120);
     }
     public static boolean isLeapYear (int year) {
         return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
@@ -50,6 +50,10 @@ public class Main {
         }
     }
     public static void printCalculateTimeDelivery(int distance) {
-        System.out.println("Время доставки банковской карты = "+ ((distance + 19)/40 +1));
+        if (distance > 0 && distance < 5000) { //проверка ограничений по доставке
+            System.out.println("Количество дней доставки банковской карты = " + ((distance + 19) / 40 + 1));
+            return;
+        }
+        System.out.println("Доставка на расстояние " + distance + "км не осущствляется");
     }
 }
